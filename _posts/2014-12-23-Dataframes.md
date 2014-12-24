@@ -33,13 +33,15 @@ u_col_names=[symbol("user_id"), symbol("age"), symbol("sex"), symbol("occupation
 
 Another way to do the same without adding each entry as a symbol. Thanks to [Jubobs](http://stackoverflow.com/users/2541573/jubobs) from this [stackoverflow post](http://stackoverflow.com/questions/27629206/why-does-this-list-comprehension-return-an-arrayany-1-instead-of-an-arraysymb/27629609#27629609) for the suggestion.
 
-	col_names=["user_id", "age", "sex", "occupation", "zip_code"]
-	u_col_names=map(symbol, col_names)
-	users = DataFrames.readtable("data/ml-100k/u.user", separator='|', header=false, names=u_col_names)
+{% highlight julia %}
+col_names=["user_id", "age", "sex", "occupation", "zip_code"]
+u_col_names=map(symbol, col_names)
+users = DataFrames.readtable("data/ml-100k/u.user", separator='|', header=false, names=u_col_names)
+{% endhighlight %}
 
 ######Python
 
-```
+{% highlight python %}
 import pandas as pd
 
 u_col_names = ['user_id', 'age', 'sex', 'occuptation', 'zip_code']
@@ -51,11 +53,11 @@ ratings = pd.read_csv('data/ml-100k/u.data', sep='\t', names=r_col_names)
 # let's only load the first five columns of the file with usecols
 m_col_names = ['movie_id', 'title', 'release_date', 'video_release_date', 'imdb_url']
 movies = pd.read_csv('data/ml-100k/u.item', sep='|', names=m_col_names, usecols=range(5))
-```
+{% endhighlight %}
 
 ######R
 
-```
+{% highlight r %}
 u_col_names <- c('user_id', 'age', 'sex', 'occupation', 'zip_code')
 users <- read.csv('data/ml-100k/u.user', sep='|', col.names=u_col_names)
 
@@ -68,7 +70,7 @@ movies = read.table('data/ml-100k/u.item', sep='|', colClasses=c("integer", "cha
 #http://stackoverflow.com/questions/5788117/only-read-limited-number-of-columns-in-r also quotes in strings cause importing errors so you need quote="" 
 #cannot specify col.names in read.table as we are skipping 19 columns. R will complain with "more columns than column names"
 colnames(movies) <- m_col_names
-```
+{% endhighlight %}
 
 If you notice closely R and python accept string literals in single quotes ' but Julia treats is as a character literal. I personally feel thats how it should be if I think about how C/C++ treats string literals.
 
