@@ -9,9 +9,9 @@ With Julia, my brain was just not ready to accept another set of syntax.
 So I thought a quick reference comparing the basic dataframe manipulation syntax for all 3 languages would be nice.
 Most of my data tasks start with some ETL tasks on dataframes. So this is more of a reference for my use in future but can be useful to others too who face the same situation.
 
-I took this awesome tutorial by [Greg Reda](http://www.gregreda.com/) on ["Working with DataFrames"](http://www.gregreda.com/2013/10/26/working-with-pandas-dataframes/) and tried to port the example to all R and Julia.
+I took this awesome tutorial by [Greg Reda](http://www.gregreda.com/) on ["Working with DataFrames"](http://www.gregreda.com/2013/10/26/working-with-pandas-dataframes/) and tried to port the example to R and Julia.
 
-All the code from this post can be found at this [github repo dataframes-compare](https://github.com/ajkl/dataframes-cheatsheet)
+All the code from this post can be found at this [github repo dataframes-compare](https://github.com/ajkl/dataframes-cheatsheet).
 
 We start with the [MovieLens 100k dataset](http://grouplens.org/datasets/movielens/). 
 
