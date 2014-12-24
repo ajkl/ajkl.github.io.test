@@ -40,7 +40,7 @@ users = DataFrames.readtable("data/ml-100k/u.user", separator='|', header=false,
 {% endhighlight %}
 
 There is no way right now to load selective columns from a file. The next IO version will hopefully have that mechanism.
-http://stackoverflow.com/questions/27628366/selecting-columns-while-importing-data-with-dataframes-readtable
+[Stackoverflow question selecting-columns-while-importing-data-with-dataframes-readtable](http://stackoverflow.com/questions/27628366/selecting-columns-while-importing-data-with-dataframes-readtable)
 
 ######Python
 
@@ -67,7 +67,7 @@ Loading the first 5 columns only
 m_col_names = c('movie_id', 'title', 'release_date', 'video_release_date', 'imdb_url')
 movies = read.table('data/ml-100k/u.item', sep='|', colClasses=c("integer", "character", "factor", "factor", "character", rep("NULL", 19)), quote="")
 {% endhighlight %}
-http://stackoverflow.com/questions/5788117/only-read-limited-number-of-columns-in-r also quotes in strings cause importing errors so you need quote="" 
+[Stackoverflow question only-read-limited-number-of-columns-in-r](http://stackoverflow.com/questions/5788117/only-read-limited-number-of-columns-in-r) also quotes in strings cause importing errors so you need quote="" 
 Cannot specify col.names in read.table as we are skipping 19 columns. R will complain with "more columns than column names"
 {% highlight r %}
 colnames(movies) <- m_col_names
@@ -216,8 +216,9 @@ We will warmup with some top/bottom values to get a feel of the data we have at 
 
 
 ######Julia
-```
+{% highlight julia %}
 head(users)
+
 	6x5 DataFrame
 	| Row | user_id | age | sex | occupation   | zip_code |
 	|-----|---------|-----|-----|--------------|----------|
@@ -227,9 +228,9 @@ head(users)
 	| 4   | 4       | 24  | "M" | "technician" | "43537"  |
 	| 5   | 5       | 33  | "F" | "other"      | "15213"  |
 	| 6   | 6       | 42  | "M" | "executive"  | "98101"  |
-```
-```
+
 tail(users)
+
 	6x5 DataFrame
 	| Row | user_id | age | sex | occupation      | zip_code |
 	|-----|---------|-----|-----|-----------------|----------|
@@ -239,41 +240,45 @@ tail(users)
 	| 4   | 941     | 20  | "M" | "student"       | "97229"  |
 	| 5   | 942     | 48  | "F" | "librarian"     | "78209"  |
 	| 6   | 943     | 22  | "M" | "student"       | "77841"  |
-```
+{% endhighlight %}
+
 If you want to select a custom number of rows in head or tail you can pass it as a param
-```
+
+{% highlight julia %}
 head(users, 3)
+
 	3x5 DataFrame
 	| Row | user_id | age | sex | occupation   | zip_code |
 	|-----|---------|-----|-----|--------------|----------|
 	| 1   | 1       | 24  | "M" | "technician" | "85711"  |
 	| 2   | 2       | 53  | "F" | "other"      | "94043"  |
 	| 3   | 3       | 23  | "M" | "writer"     | "32067"  |
-```
+{% endhighlight %}
 
 I wont paste the output of these for python and R as they are similar to what Julia shows..
 
 ######Python
-```
+{% highlight python %}
 users.head()
 users.tail()
 users.head(3)
-```
+{% endhighlight %}
 
 ######R
-```
+{% highlight r %}
 head(movies)
 tail(movies)
 head(movies, n=3)
-```
+{% endhighlight %}
 
 #### Row subset
 
 Lets try to get all the rows from 50th row to the 55th row
 
 ######Julia
-```
+{% highlight julia %}
 users[50:55,:]
+
 	6x5 DataFrame
 	| Row | user_id | age | sex | occupation   | zip_code |
 	|-----|---------|-----|-----|--------------|----------|
@@ -283,23 +288,26 @@ users[50:55,:]
 	| 4   | 53      | 26  | "M" | "programmer" | "55414"  |
 	| 5   | 54      | 22  | "M" | "executive"  | "66315"  |
 	| 6   | 55      | 37  | "M" | "programmer" | "01331"  |
-```
+{% endhighlight %}
+
 ######Python
-```
+{% highlight python %}
 users[50:55]
-```
+{% endhighlight %}
+
 ######R
-```
+{% highlight r %}
 users[50:55,]
-```
+{% endhighlight %}
 
 #### Column subset
 
 You can select a single column by column name.
 
 ######Julia
-```
+{% highlight julia %}
 head(users[:occupation])
+
 	6-element DataArray{UTF8String,1}:
 	 "technician"
 	 "other"     
@@ -307,21 +315,24 @@ head(users[:occupation])
 	 "technician"
 	 "other"     
 	 "executive" 
-```
+{% endhighlight %}
+
 ######Python
-```
+{% highlight python %}
 users['occupation'].head()
-```
+{% endhighlight %}
+
 ######R
-```
+{% highlight r %}
 head(users$occupation)
-```
+{% endhighlight %}
 
 Multiple column selection works by passing a vector of column names
 
 ######Julia
-```
+{% highlight julia %}
 head(users[:,[:occupation, :sex, :age]])
+
 	6x3 DataFrame
 	| Row | occupation   | sex | age |
 	|-----|--------------|-----|-----|
@@ -331,24 +342,24 @@ head(users[:,[:occupation, :sex, :age]])
 	| 4   | "technician" | "M" | 24  |
 	| 5   | "other"      | "F" | 33  |
 	| 6   | "executive"  | "M" | 42  |
-```
+{% endhighlight %}
 
 ######Python
-```
+{% highlight python %}
 users[['occupation', 'sex', 'age']].head()
-```
+{% endhighlight %}
 
 ######R
-```
+{% highlight r %}
 head(users[,c('occupation', 'sex', 'age')])
-```
+{% endhighlight %}
 
 #### Query / Conditional subset
 
 Subsetting a dataframe based on querying a column for a condition can be achieved like this -
 
 ######Julia
-```
+{% highlight julia %}
 users[users[:occupation] .== "writer", :]
 	45x5 DataFrame
 	| Row | user_id | age | sex | occupation | zip_code |
@@ -362,19 +373,23 @@ users[users[:occupation] .== "writer", :]
 	| 43  | 853     | 49  | "M" | "writer"   | "40515"  |
 	| 44  | 896     | 28  | "M" | "writer"   | "91505"  |
 	| 45  | 911     | 37  | "F" | "writer"   | "53210"  |
-```
+{% endhighlight %}
+
 ######Python
-```
+{% highlight python %}
 users[users.occupation == 'writer']
-```
+{% endhighlight %}
+
 There is another way in python, by using the query construct of the dataframe. 
-```
+{% highlight python %}
 users.query('occupation=="writer"')
-```
+{% endhighlight %}
+
 ######R
-```
+{% highlight r %}
 users[users$occupation == 'writer',]
-```
+{% endhighlight %}
+
 Notice the subtle changes in all these examples. For example in the last query subsetting, for python you dont need to specify "select all columns" by adding a ' ," ' as you do in Julia or a ', ' as you do in R.
 
 I will try to write a followup post on Join on Dataframes in these 3 languages. 
