@@ -392,4 +392,4 @@ users[users$occupation == 'writer',]
 
 Notice the subtle changes in all these examples. For example in the last query subsetting, for python you dont need to specify "select all columns" by adding a ' ," ' as you do in Julia or a ', ' as you do in R.
 
-I will try to write a followup post on Join on Dataframes in these 3 languages. 
+I will try to write a followup post on Joins on Dataframes in these 3. 
