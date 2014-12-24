@@ -1,3 +1,8 @@
+---
+layout: post
+title: Dataframes
+---
+
 I have been playing a lot lately with [Julia](http://julialang.org/).
 In the past I have used python and R a lot for my data analysis tasks. I always tend to have some cheatsheet in front of me for the basic dataframe operations in pandas and R. Its hard to make that context switch in the syntax from one language to another.
 With Julia, my brain was just not ready to accept another set of syntax.
