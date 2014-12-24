@@ -24,7 +24,7 @@ This data set consists of:
 ## Data import
 Lets start with loading the data into our dataframe. The methods to read the data from a flat file are pretty simple and straight forward in all 3, the only tricky part is when adding column names in Julia. But there are ways to get around.
 
-######Julia
+#### Julia
 
 {% highlight julia %}
 using DataFrames
@@ -42,7 +42,7 @@ users = DataFrames.readtable("data/ml-100k/u.user", separator='|', header=false,
 There is no way right now to load selective columns from a file. The next IO version will hopefully have that mechanism.
 [Stackoverflow question selecting-columns-while-importing-data-with-dataframes-readtable](http://stackoverflow.com/questions/27628366/selecting-columns-while-importing-data-with-dataframes-readtable)
 
-######Python
+#### Python
 
 {% highlight python %}
 import pandas as pd
@@ -56,7 +56,7 @@ m_col_names = ['movie_id', 'title', 'release_date', 'video_release_date', 'imdb_
 movies = pd.read_csv('data/ml-100k/u.item', sep='|', names=m_col_names, usecols=range(5))
 {% endhighlight %}
 
-######R
+#### R
 
 {% highlight r %}
 u_col_names <- c('user_id', 'age', 'sex', 'occupation', 'zip_code')
@@ -78,7 +78,7 @@ If you notice closely R and python accept string literals in single quotes ' but
 ## Sanity check
 Now that we have the data loaded in our dataframes, its usually good practice to see the classes/types of each column. We will also try to get the summary statistics for the columns of our dataframe.
 
-######Julia
+#### Julia
 {% highlight julia %}
 eltypes(users)
 
@@ -134,7 +134,7 @@ describe(users)
 	Unique  795
 {% endhighlight %}
 
-######Python
+#### Python
 {% highlight julia %}
 type(users)
 
@@ -162,7 +162,7 @@ users.describe
 	max	943.000000	73.000000
 {% endhighlight %}
 
-######R
+#### R
 {% highlight r %}
 class(users)
 
@@ -211,11 +211,11 @@ We can see that the ratio is around 1:2.5 between female and male users and most
 
 Lets try to query our data now and filter it with some conditions. 
 
-#### Head/Tail
+### Head/Tail
 We will warmup with some top/bottom values to get a feel of the data we have at hand.
 
 
-######Julia
+#### Julia
 {% highlight julia %}
 head(users)
 
@@ -257,25 +257,25 @@ head(users, 3)
 
 I wont paste the output of these for python and R as they are similar to what Julia shows..
 
-######Python
+#### Python
 {% highlight python %}
 users.head()
 users.tail()
 users.head(3)
 {% endhighlight %}
 
-######R
+#### R
 {% highlight r %}
 head(movies)
 tail(movies)
 head(movies, n=3)
 {% endhighlight %}
 
-#### Row subset
+### Row subset
 
 Lets try to get all the rows from 50th row to the 55th row
 
-######Julia
+#### Julia
 {% highlight julia %}
 users[50:55,:]
 
@@ -290,21 +290,21 @@ users[50:55,:]
 	| 6   | 55      | 37  | "M" | "programmer" | "01331"  |
 {% endhighlight %}
 
-######Python
+#### Python
 {% highlight python %}
 users[50:55]
 {% endhighlight %}
 
-######R
+#### R
 {% highlight r %}
 users[50:55,]
 {% endhighlight %}
 
-#### Column subset
+### Column subset
 
 You can select a single column by column name.
 
-######Julia
+#### Julia
 {% highlight julia %}
 head(users[:occupation])
 
@@ -317,19 +317,19 @@ head(users[:occupation])
 	 "executive" 
 {% endhighlight %}
 
-######Python
+#### Python
 {% highlight python %}
 users['occupation'].head()
 {% endhighlight %}
 
-######R
+#### R
 {% highlight r %}
 head(users$occupation)
 {% endhighlight %}
 
 Multiple column selection works by passing a vector of column names
 
-######Julia
+#### Julia
 {% highlight julia %}
 head(users[:,[:occupation, :sex, :age]])
 
@@ -344,21 +344,21 @@ head(users[:,[:occupation, :sex, :age]])
 	| 6   | "executive"  | "M" | 42  |
 {% endhighlight %}
 
-######Python
+#### Python
 {% highlight python %}
 users[['occupation', 'sex', 'age']].head()
 {% endhighlight %}
 
-######R
+#### R
 {% highlight r %}
 head(users[,c('occupation', 'sex', 'age')])
 {% endhighlight %}
 
-#### Query / Conditional subset
+### Query / Conditional subset
 
 Subsetting a dataframe based on querying a column for a condition can be achieved like this -
 
-######Julia
+#### Julia
 {% highlight julia %}
 users[users[:occupation] .== "writer", :]
 	45x5 DataFrame
@@ -375,7 +375,7 @@ users[users[:occupation] .== "writer", :]
 	| 45  | 911     | 37  | "F" | "writer"   | "53210"  |
 {% endhighlight %}
 
-######Python
+#### Python
 {% highlight python %}
 users[users.occupation == 'writer']
 {% endhighlight %}
@@ -385,7 +385,7 @@ There is another way in python, by using the query construct of the dataframe.
 users.query('occupation=="writer"')
 {% endhighlight %}
 
-######R
+#### R
 {% highlight r %}
 users[users$occupation == 'writer',]
 {% endhighlight %}
