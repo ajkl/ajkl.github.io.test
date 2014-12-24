@@ -17,9 +17,9 @@ We start with the [MovieLens 100k dataset](http://grouplens.org/datasets/moviele
 From the README you can see :
 
 This data set consists of:
-	* 100,000 ratings (1-5) from 943 users on 1682 movies. 
-	* Each user has rated at least 20 movies. 
-	* Simple demographic info for the users (age, gender, occupation, zip)
+* 100,000 ratings (1-5) from 943 users on 1682 movies. 
+* Each user has rated at least 20 movies. 
+* Simple demographic info for the users (age, gender, occupation, zip)
 
 ## Data import
 Lets start with loading the data into our dataframe. The methods to read the data from a flat file are pretty simple and straight forward in all 3, the only tricky part is when adding column names in Julia. But there are ways to get around.
