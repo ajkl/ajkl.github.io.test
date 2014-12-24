@@ -39,6 +39,9 @@ u_col_names=map(symbol, col_names)
 users = DataFrames.readtable("data/ml-100k/u.user", separator='|', header=false, names=u_col_names)
 {% endhighlight %}
 
+There is no way right now to load selective columns from a file. The next IO version will hopefully have that mechanism.
+http://stackoverflow.com/questions/27628366/selecting-columns-while-importing-data-with-dataframes-readtable
+
 ######Python
 
 {% highlight python %}
@@ -46,11 +49,9 @@ import pandas as pd
 
 u_col_names = ['user_id', 'age', 'sex', 'occuptation', 'zip_code']
 users = pd.read_csv('data/ml-100k/u.user', sep = '|', names=u_col_names)
-
-r_col_names = ['user_id', 'movie_id', 'rating', 'unix_timestamp']
-ratings = pd.read_csv('data/ml-100k/u.data', sep='\t', names=r_col_names)
-
-# let's only load the first five columns of the file with usecols
+{% endhighlight %}
+Let's only load the first five columns of the file with usecols
+{% highlight python %}
 m_col_names = ['movie_id', 'title', 'release_date', 'video_release_date', 'imdb_url']
 movies = pd.read_csv('data/ml-100k/u.item', sep='|', names=m_col_names, usecols=range(5))
 {% endhighlight %}
@@ -60,15 +61,15 @@ movies = pd.read_csv('data/ml-100k/u.item', sep='|', names=m_col_names, usecols=
 {% highlight r %}
 u_col_names <- c('user_id', 'age', 'sex', 'occupation', 'zip_code')
 users <- read.csv('data/ml-100k/u.user', sep='|', col.names=u_col_names)
-
-r_col_names = c('user_id', 'movie_id', 'rating', 'unix_timestamp')
-ratings = read.csv('data/ml-100k/u.data', sep='\t', col.names=r_col_names)
-
-# let's only load the first five columns for movies using "usecols" param
+{% endhighlight %}
+Loading the first 5 columns only
+{% highlight r %}
 m_col_names = c('movie_id', 'title', 'release_date', 'video_release_date', 'imdb_url')
 movies = read.table('data/ml-100k/u.item', sep='|', colClasses=c("integer", "character", "factor", "factor", "character", rep("NULL", 19)), quote="")
-#http://stackoverflow.com/questions/5788117/only-read-limited-number-of-columns-in-r also quotes in strings cause importing errors so you need quote="" 
-#cannot specify col.names in read.table as we are skipping 19 columns. R will complain with "more columns than column names"
+{% endhighlight %}
+http://stackoverflow.com/questions/5788117/only-read-limited-number-of-columns-in-r also quotes in strings cause importing errors so you need quote="" 
+Cannot specify col.names in read.table as we are skipping 19 columns. R will complain with "more columns than column names"
+{% highlight r %}
 colnames(movies) <- m_col_names
 {% endhighlight %}
 
@@ -78,7 +79,7 @@ If you notice closely R and python accept string literals in single quotes ' but
 Now that we have the data loaded in our dataframes, its usually good practice to see the classes/types of each column. We will also try to get the summary statistics for the columns of our dataframe.
 
 ######Julia
-```
+{% highlight julia %}
 eltypes(users)
 
 	5-element Array{Type{T<:Top},1}:
@@ -87,8 +88,8 @@ eltypes(users)
 	 UTF8String
 	 UTF8String
 	 UTF8String
-```
-```
+
+
 describe(users)
 
 	user_id
@@ -131,15 +132,14 @@ describe(users)
 	NAs     0
 	NA%     0.0%
 	Unique  795
-```
+{% endhighlight %}
 
 ######Python
-```
+{% highlight julia %}
 type(users)
 
 	pandas.core.frame.DataFrame
-```
-```
+
 users.dtypes
 
 	user_id         int64
@@ -148,8 +148,7 @@ users.dtypes
 	occuptation    object
 	zip_code       object
 	dtype: object
-```
-```
+
 users.describe
 
 		user_id		age
@@ -161,15 +160,14 @@ users.describe
 	50%	472.000000	31.000000
 	75%	707.500000	43.000000
 	max	943.000000	73.000000
-```
+{% endhighlight %}
 
 ######R
-```
+{% highlight r %}
 class(users)
 
 	[1] "data.frame"
-```
-```
+
 lapply(users, class)
 
 	$user_id
@@ -186,8 +184,7 @@ lapply(users, class)
 	
 	$zip_code
 	[1] "factor"
-```
-```
+
 summary(users)
 
 	    user_id           age        sex             occupation     zip_code  
@@ -206,7 +203,7 @@ summary(users)
 	 3rd Qu.:707.8   3rd Qu.:43.00           engineer     : 67   55337  :  5  
 	 Max.   :943.0   Max.   :73.00           programmer   : 66   27514  :  4  
 	                                         (Other)      :334   (Other):908  							
-```
+{% endhighlight %}
 
 We can see that the ratio is around 1:2.5 between female and male users and most of them (if you exclude "other") are students. Minimum age is 7 and it goes till 73 as the max.
 
