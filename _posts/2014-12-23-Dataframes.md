@@ -26,9 +26,10 @@ Lets start with loading the data into our dataframe. The methods to read the dat
 
 ######Julia
 
-
-	using DataFrames
-	u_col_names=[symbol("user_id"), symbol("age"), symbol("sex"), symbol("occupation"), symbol("zip_code")]
+{% highlight julia %}
+using DataFrames
+u_col_names=[symbol("user_id"), symbol("age"), symbol("sex"), symbol("occupation"), symbol("zip_code")]
+{% endhighlight %}
 
 Another way to do the same without adding each entry as a symbol. Thanks to [Jubobs](http://stackoverflow.com/users/2541573/jubobs) from this [stackoverflow post](http://stackoverflow.com/questions/27629206/why-does-this-list-comprehension-return-an-arrayany-1-instead-of-an-arraysymb/27629609#27629609) for the suggestion.
 
