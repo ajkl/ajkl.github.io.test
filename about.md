@@ -14,4 +14,5 @@ All views expressed here are mine.
 ### Contact me
 
 @ajinkyakale
-kaleajinkya<at>gmail<dot>com
+
+kaleajinkya{at}gmail{dot}com
