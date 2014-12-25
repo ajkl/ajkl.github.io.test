@@ -60,7 +60,7 @@ movies = pd.read_csv('data/ml-100k/u.item', sep='|', names=m_col_names, usecols=
 
 {% highlight r %}
 u_col_names <- c('user_id', 'age', 'sex', 'occupation', 'zip_code')
-users <- read.csv('data/ml-100k/u.user', sep='|', col.names=u_col_names)
+users <- read.csv('data/ml-100k/u.user', sep='|', col.names=u_col_names, header=FALSE)
 {% endhighlight %}
 Loading the first 5 columns only
 {% highlight r %}
@@ -292,13 +292,15 @@ users[50:55,:]
 
 #### Python
 {% highlight python %}
-users[50:55]
+users[49:55]
 {% endhighlight %}
 
 #### R
 {% highlight r %}
 users[50:55,]
 {% endhighlight %}
+Notice that Julia and R have 1-based indexing whereas python has 0-based indexing. 
+Also python slicing a:b is a(included) and b(excluded) so you have to do 49:55 to get rows 50-55 in python.
 
 ### Column subset
 
