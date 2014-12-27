@@ -418,4 +418,4 @@ Notice the subtle changes in all these examples. For example in the last query s
 
 I will try to write a followup post on Joins on Dataframes in these 3. 
 
-Discuss this post on [hacker news](https://news.ycombinator.com/item?id=8794276)
+Discuss this post on [hacker news](https://news.ycombinator.com/item?id=8794276).
