@@ -39,6 +39,13 @@ u_col_names=map(symbol, col_names)
 users = DataFrames.readtable("data/ml-100k/u.user", separator='|', header=false, names=u_col_names)
 {% endhighlight %}
 
+Edit: Probably the easiest way to do this is (as pointed out by lot of people on HN and in the comments section here)
+
+{% highlight julia %}
+u_col_names=[:user_id,  :age,  :sex,  :occupation,  :zip_code]
+users = DataFrames.readtable("data/ml-100k/u.user", separator='|', header=false, names=u_col_names)
+{% endhighlight %}
+
 There is no way right now to load selective columns from a file. The next IO version will hopefully have that mechanism.
 [Stackoverflow question selecting-columns-while-importing-data-with-dataframes-readtable](http://stackoverflow.com/questions/27628366/selecting-columns-while-importing-data-with-dataframes-readtable)
 
