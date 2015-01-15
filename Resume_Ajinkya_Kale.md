@@ -1,15 +1,16 @@
-935M Marietta St, Apt 330 AJINKYA KALE 1-734-604-4176
-NW, Atlanta, GA 30318
-OBJECTIVE
-http://ajinkya.info/
+Ajinkya Kale
+============
+1-734-604-4176
+http://ajkl.github.io
 kaleajinkya@gmail.com
-￼￼An engaging software engineer position in fields related to big data problems, machine learning, large scale data analytics, social network graph analysis, algorithm development, or similar.
+
 PUBLICATIONS
  MLPACK 1.0.2 at mloss.org Machine Learning Open Source Software
  ACM SIGIR 2010 iCollaborate: harvesting value from enterprise web usage
  ACM CIKM 2010 FALCON: Seamless Access to Meeting Data from the Inbox and Calendar
  ICCTA 2010 A Generalized Recursive Algorithm for Binary Multiplication based on Vedic Mathematics
  WORLDCOMP CSC 2008 A Novel Binary Division Algorithm based on Vedic Mathematics
+
 EMPLOYMENT
 Data Scientist, Intern Amgonna.com Summer 2012 - present
  Responsible for building the user and interests recommendation engine for Amgonna. Built the engine from scratch using R and REST apis to connect to the front end.
