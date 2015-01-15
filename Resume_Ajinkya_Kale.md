@@ -48,7 +48,7 @@ Employement
     _System Software Engineer, Intern_  
     _Fall 2007 – Summer 2008_  
 
-    Undergraduate thesis project on “securing Remote Procedure Calls over HTTPS protocol” Software Analysis Engineer, Intern
+    Undergraduate thesis project on “securing Remote Procedure Calls over HTTPS protocol” 
 
 * **WebSym Technologies**  
     _Software Engineer, Intern_  
