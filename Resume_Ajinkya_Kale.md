@@ -51,7 +51,7 @@ Employement
     Undergraduate thesis project on “securing Remote Procedure Calls over HTTPS protocol” Software Analysis Engineer, Intern
 
 * **WebSym Technologies**  
-    _Software Eningeer, Intern_  
+    _Software Engineer, Intern_  
     _Fall 2006_  
 
     Design analysis of software cycle for a job recruitment software to set referrals for applicants.
@@ -79,10 +79,13 @@ Honors and Awards
 -----------------
   - _Best Outgoing Student College of Engineering Pune, India, 2008_   
     Tata Consultancy Services Ltd. Sponsored “Best Outgoing Student” award for academic excellence
+
   - _Institute of Mathematical Sciences (IMSc) Chennai, India , 2008_  
       One of the 6 selected students (amongst 10,000 applicants all over India) for summer school.
+
   - _ACM International Collegiate Programming Contest (ACM ICPC 2008)_  
       Represented COEP at ACM ICPC 2007-08 ASIA Regionals. One of 54 teams for ASIA Pacific.
+
   - _The MIT India Technology Education Program (ITEP), 2001_  
       One of the few selected for the ITEP program from my high school.
 
