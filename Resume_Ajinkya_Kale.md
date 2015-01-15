@@ -7,8 +7,8 @@ kaleajinkya@gmail.com
 Employement
 ----------
 * **eBay Inc.**  
-    _Applied Researcher_
-    Feb 2013 - present
+    _Applied Researcher_  
+    _Feb 2013 - present_  
     Work with the Search Front End Applied Research (SFEAR) team on various Data Science tasks to power data-driven features on the Search Results Page and View Item page to improve the user experience.
 * Data Scientist, Intern Amgonna.com Summer 2012
     Responsible for building the user and interests recommendation engine for Amgonna. Built the engine from scratch using R and REST apis to connect to the front end.
@@ -29,12 +29,12 @@ Employement
 
 Education
 ---------
-    * Masters in Computational Science and Engineering.  _Fall 2011 – Fall 2012_
-        Georgia Institute of Technology(GaTech), Atlanta, GA. 
-        GPA : **3.66/4.0**
-    * Bachelor of Technology in Computer Science and Engineering. _Fall 2004 - Fall 2008_
-        College of Engineering Pune(COEP), Pune, India
-        GPA : **8.13/10**
+* Masters in Computational Science and Engineering.  _Fall 2011 – Fall 2012_
+    Georgia Institute of Technology(GaTech), Atlanta, GA. 
+    GPA : **3.66/4.0**
+* Bachelor of Technology in Computer Science and Engineering. _Fall 2004 - Fall 2008_
+    College of Engineering Pune(COEP), Pune, India
+    GPA : **8.13/10**
 
 Skills
 ------
