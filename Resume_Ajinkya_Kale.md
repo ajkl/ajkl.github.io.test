@@ -1,14 +1,14 @@
 Ajinkya Kale
 ============
-1-734-604-4176
-
-http://ajkl.github.io
-
-kaleajinkya@gmail.com
+1-734-604-4176  
+http://ajkl.github.io  
+kaleajinkya@gmail.com  
 
 Employement
 ----------
-* eBay Inc., Applied Researcher Feb 2013 - present
+* **eBay Inc.**  
+    _Applied Researcher_
+    Feb 2013 - present
     Work with the Search Front End Applied Research (SFEAR) team on various Data Science tasks to power data-driven features on the Search Results Page and View Item page to improve the user experience.
 * Data Scientist, Intern Amgonna.com Summer 2012
     Responsible for building the user and interests recommendation engine for Amgonna. Built the engine from scratch using R and REST apis to connect to the front end.
