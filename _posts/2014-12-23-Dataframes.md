@@ -39,6 +39,13 @@ u_col_names=map(symbol, col_names)
 users = DataFrames.readtable("data/ml-100k/u.user", separator='|', header=false, names=u_col_names)
 {% endhighlight %}
 
+Edit: Probably the easiest way to do this is (as pointed out by lot of people on HN and in the comments section here)
+
+{% highlight julia %}
+u_col_names=[:user_id,  :age,  :sex,  :occupation,  :zip_code]
+users = DataFrames.readtable("data/ml-100k/u.user", separator='|', header=false, names=u_col_names)
+{% endhighlight %}
+
 There is no way right now to load selective columns from a file. The next IO version will hopefully have that mechanism.
 [Stackoverflow question selecting-columns-while-importing-data-with-dataframes-readtable](http://stackoverflow.com/questions/27628366/selecting-columns-while-importing-data-with-dataframes-readtable)
 
@@ -60,7 +67,7 @@ movies = pd.read_csv('data/ml-100k/u.item', sep='|', names=m_col_names, usecols=
 
 {% highlight r %}
 u_col_names <- c('user_id', 'age', 'sex', 'occupation', 'zip_code')
-users <- read.csv('data/ml-100k/u.user', sep='|', col.names=u_col_names)
+users <- read.csv('data/ml-100k/u.user', sep='|', col.names=u_col_names, header=FALSE)
 {% endhighlight %}
 Loading the first 5 columns only
 {% highlight r %}
@@ -184,6 +191,21 @@ lapply(users, class)
 	
 	$zip_code
 	[1] "factor"
+	
+str(users)
+
+	'data.frame':	943 obs. of  5 variables:
+	'data.frame':	943 obs. of  5 variables:
+	 $ user_id   : int  1 2 3 4 5 6 7 8 9 10 ...
+	 $ age       : int  24 53 23 24 33 42 57 36 29 53 ...
+	 $ sex       : Factor w/ 2 levels "F","M": 2 1 2 2 1 2 2 2 2 2 ...
+	 $ occupation: Factor w/ 21 levels "administrator",..: 20 14 21 20 14 7 1 1 19 10 ...
+	 $ zip_code  : Factor w/ 795 levels "00000","01002",..: 623 690 271 332 134 759 652 49 2 643 ...
+	 $ user_id   : int  1 2 3 4 5 6 7 8 9 10 ...
+	 $ age       : int  24 53 23 24 33 42 57 36 29 53 ...
+	 $ sex       : Factor w/ 2 levels "F","M": 2 1 2 2 1 2 2 2 2 2 ...
+	 $ occupation: Factor w/ 21 levels "administrator",..: 20 14 21 20 14 7 1 1 19 10 ...
+	 $ zip_code  : Factor w/ 795 levels "00000","01002",..: 623 690 271 332 134 759 652 49 2 643 ...
 
 summary(users)
 
@@ -292,13 +314,15 @@ users[50:55,:]
 
 #### Python
 {% highlight python %}
-users[50:55]
+users[49:55]
 {% endhighlight %}
 
 #### R
 {% highlight r %}
 users[50:55,]
 {% endhighlight %}
+Notice that Julia and R have 1-based indexing whereas python has 0-based indexing. 
+Also python slicing a:b is a(included) and b(excluded) so you have to do 49:55 to get rows 50-55 in python.
 
 ### Column subset
 
@@ -393,3 +417,5 @@ users[users$occupation == 'writer',]
 Notice the subtle changes in all these examples. For example in the last query subsetting, for python you dont need to specify "select all columns" by adding a ' ," ' as you do in Julia or a ', ' as you do in R.
 
 I will try to write a followup post on Joins on Dataframes in these 3. 
+
+Discuss this post on [hacker news](https://news.ycombinator.com/item?id=8794276).
