@@ -1,6 +1,6 @@
 Ajinkya Kale
 ============
-1-734-604-4176  
+_1-734-604-4176_  
 http://ajkl.github.io  
 kaleajinkya@gmail.com  
 
@@ -58,29 +58,32 @@ Employement
 
 Education
 ---------
-* Masters in Computational Science and Engineering.  _Fall 2011 – Fall 2012_  
-    Georgia Institute of Technology(GaTech), Atlanta, GA.  
+* Masters in Computational Science and Engineering.  
+    _Fall 2011 – Fall 2012_  
+    _Georgia Institute of Technology(GaTech), Atlanta, GA_  
     GPA : **3.66/4.0**
 
-* Bachelor of Technology in Computer Science and Engineering. _Fall 2004 - Fall 2008_  
-    College of Engineering Pune(COEP), Pune, India  
+* Bachelor of Technology in Computer Science and Engineering.  
+    _Fall 2004 - Fall 2008_  
+    _College of Engineering Pune(COEP), Pune, India_  
     GPA : **8.13/10**
 
 Skills
 ------
-  - Proficient : Java, C/C++, R statistical computing, Python
-  - Intermediate : Scala, Python
-  - Hobbyist : Haskell, Erlang, JavaScript
-  - Technologies : Apache{ Spark, Hadoop, Lucene, Solr }, GraphLab, 0xdata H2O.ai, Neo4j GraphDB, MongoDB
+  - _Proficient_ : Java, C/C++, R statistical computing, Python
+  - _Intermediate_ : Scala, Python
+  - _Hobbyist_ : Haskell, Erlang, JavaScript
+  - _Technologies_ : Apache{ Spark, Hadoop, Lucene, Solr }, GraphLab, 0xdata H2O.ai, Neo4j GraphDB, MongoDB
  
 Honors and Awards
 -----------------
-  - Best Outgoing Student College of Engineering Pune, India, 2008 Tata Consultancy Services Ltd. Sponsored “Best Outgoing Student” award for academic excellence
-  - Institute of Mathematical Sciences (IMSc) Chennai, India , 2008
+  - _Best Outgoing Student College of Engineering Pune, India, 2008_   
+    Tata Consultancy Services Ltd. Sponsored “Best Outgoing Student” award for academic excellence
+  - _Institute of Mathematical Sciences (IMSc) Chennai, India , 2008_  
       One of the 6 selected students (amongst 10,000 applicants all over India) for summer school.
-  - ACM International Collegiate Programming Contest (ACM ICPC 2008)
+  - _ACM International Collegiate Programming Contest (ACM ICPC 2008)_  
       Represented COEP at ACM ICPC 2007-08 ASIA Regionals. One of 54 teams for ASIA Pacific.
-  - The MIT India Technology Education Program (ITEP), 2001
+  - _The MIT India Technology Education Program (ITEP), 2001_  
       One of the few selected for the ITEP program from my high school.
 
 Miscellany
